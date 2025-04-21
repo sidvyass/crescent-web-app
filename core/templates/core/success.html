@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<section class="dark-custom text-light p-5 text-center">
+    <div class="container">
+        <div class="align-items-center mx-auto d-none d-md-block">
+            <h1 class="text-center">Success!</h1>
+        </div>
+    </div>
+</section>
+
+<section id="" class="dark-custom text-light p-md-5" style="height: 700px;">
+    <div class="container">
+        <div class="row align-items-center justify-content-between d-flex">
+            <div class="col-md p-md-5 mt-5 mt-md-0 mx-auto">
+                <h1 class="p-1">Thank You!</h1>
+                <p class="lead p-1">
+                    We typically return calls within 3 hours. If it’s late in the day, we’ll get back to you first thing the next morning.
+                    Feel free to explore our website and shortlist properties for our agent to help expedite the process. Our catalog includes many rebate properties as well as ready-to-move options.
+                </p>
+                <p class="lead p-1">
+                    Feel free to explore our website and shortlist properties for our agent to help expedite the process. Our catalog includes many rebate properties as well as ready-to-move options.
+                </p>
+                <a href="#" class="btn btn-custom bi-chevron-right">See properties</a>
+            </div>
+            <div class="col-md mx-auto d-none d-md-block">
+                {% load static %}
+                <img src="{% static 'images/Checkmark.svg' %}" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

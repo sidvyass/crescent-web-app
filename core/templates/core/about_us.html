@@ -1,0 +1,134 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="position-relative text-light d-flex align-items-center justify-content-center"
+	style="height: 60vh; background-image: url('{% static 'core/images/bg_section_3.jpeg' %}'); background-size: cover; background-position: center;">
+	<div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0,0,0,0.5);"></div>
+	<h1 class="position-relative display-4 fw-bold z-1">About Us</h1>
+</section>
+
+<!-- COMMITMENT SECTION -->
+<section class="position-relative text-light py-5" style="background-color: #2B2B2B;">
+	<!-- Black Tint Overlay -->
+	<div
+		style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 0;">
+	</div>
+
+	<div class="container position-relative z-1 text-center">
+		<!-- Section Heading -->
+		<p class="text-success fw-bold mb-2">CULTIVATING CONFIDENCE</p>
+		<h2 class="fw-bold mb-5 text-white">Our Commitment to You</h2>
+
+		<!-- Commitment Cards -->
+		<div class="row text-start">
+			<!-- Card 1 -->
+			<div class="col-md-4 mb-4">
+				<div class="text-center mb-3">
+					<img src="https://www.nvalandscaping.com/wp-content/uploads/2024/04/design-blueprint.svg"
+						alt="Design Blueprint" width="80" height="80">
+				</div>
+				<h5 class="fw-bold text-white">Innovative Design</h5>
+				<p class="text-white-75">
+					We take your problem or vision and design the best possible outcome for your
+					space. Our team will develop concept drawings to help you visualize the space.
+				</p>
+			</div>
+
+			<!-- Card 2 -->
+			<div class="col-md-4 mb-4">
+				<div class="text-center mb-3">
+					<img src="https://www.nvalandscaping.com/wp-content/uploads/2024/04/award.svg"
+						alt="Award" width="80" height="80">
+				</div>
+				<h5 class="fw-bold text-white">Exceptional Craftsmanship</h5>
+				<p class="text-white-75">
+					With a deep understanding of horticulture and a dedication to using high-quality
+					products, we commit to excellence in every detail of the project.
+				</p>
+			</div>
+
+			<!-- Card 3 -->
+			<div class="col-md-4 mb-4">
+				<div class="text-center mb-3">
+					<img src="https://www.nvalandscaping.com/wp-content/uploads/2024/04/message-bubble.svg"
+						alt="Communication" width="80" height="80">
+				</div>
+				<h5 class="fw-bold text-white">Proactive Communication</h5>
+				<p class="text-white-75">
+					Having work done around your property can be complicated. Our team will keep the
+					project moving, keep the neighbors happy, and keep you informed every step of
+					the way.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- TEAM SECTION -->
+<section class="bg-white py-5">
+	<div class="container text-center">
+		<!-- Team Photo -->
+		<img src="{% static 'core/images/about_us/team_photo_placeholder.png' %}" class="img-fluid rounded mb-4"
+			alt="Our Team" loading="lazy">
+
+		<!-- Title and Subheading -->
+		<h2 class="display-5 fw-bold">Meet Our Team</h2>
+		<p class="text-muted fs-5 mb-4">Get to know the talented individuals behind our company</p>
+
+		<!-- Write-up -->
+		<p class="mx-auto" style="max-width: 800px;">
+			At Crescent Services, our team is our strength. Comprising experienced designers, skilled
+			horticulturists, and dedicated project managers, we bring creativity and precision to every job.
+			Our shared passion for the outdoors fuels our commitment to building landscapes that leave
+			lasting impressions.
+		</p>
+	</div>
+</section>
+
+<!-- OWNER PROFILE SECTION -->
+<section class="bg-light py-4">
+	<div class="container">
+		<div class="row align-items-center">
+			<!-- Left: Image -->
+			<div class="col-md-6 mb-4 mb-md-0 text-center">
+				<img src="{% static 'core/images/about_us/ceo_photo.jpg' %}"
+					class="img-fluid rounded shadow" alt="Ibi Pashaei" loading="lazy"
+					style="max-height: 800px; width: auto;">
+			</div>
+
+			<!-- Right: Text -->
+			<div class="col-md-6">
+				<h2 class="fw-bold">Jack Sielicki, Owner</h2>
+				<h5 class="text-muted mb-3">Founder of Crescent Services LLC</h5>
+				<p class="mb-2">
+				</p>
+				<p class="mb-3">
+				</p>
+				<a href="/contact-us" class="btn btn-dark-green mt-2">Contact Us</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.bg-dark-green {
+		background-color: #1b5e20;
+	}
+
+	.btn-dark-green {
+		background-color: #1b5e20;
+		color: #fff;
+		border: none;
+	}
+
+	.btn-dark-green:hover {
+		background-color: #145218;
+	}
+</style>
+
+
+{% endblock %}
