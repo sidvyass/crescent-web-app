@@ -1,2 +1,4 @@
 todo.md
 .env
+staticfiles/
+__pycache__/
