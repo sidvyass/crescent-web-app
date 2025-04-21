@@ -11,15 +11,19 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"  # NOTE: Change this to smtp when LIVE
-EMAIL_HOST = "smtp.yourprovider.com"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"  # NOTE: Change this to smtp when LIVE
+EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "dev@crescentservices.co"
-EMAIL_HOST_PASSWORD = "Gautam_28574"
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
@@ -27,12 +31,12 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-!fo7g0$0pzgauti-st^^rpcqtw&8wp-g5=vl4(xax16frs%-5y"
+SECRET_KEY = os.environ.get("D_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["crescent.herokuapp.com", "www.crescentservices.co", "127.0.0.1"]
+ALLOWED_HOSTS = ["crescent.herokuapp.com", "www.crescentservices.co"]
 
 
 # Application definition
