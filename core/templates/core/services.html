@@ -15,22 +15,14 @@
 </section>
 
 <!-- Intro -->
-<section class="intro py-5">
+<section class="intro d-flex flex-column justify-content-center align-items-center" style="min-height:30vh;">
 	<div class="container">
-		<p class="fs-4 text-center text-dark" style="max-width: 800px; margin: 0 auto;">
+		<p class="fs-3 text-center text-dark" style="max-width: 800px; margin: 0 auto; margin-bottom: 1rem;">
 			{{ intro_text }}
 		</p>
 	</div>
+	<div style="width: 60px; height: 4px; background-color: #2e7d32; margin: 0 auto 2rem auto;"></div>
 </section>
-
-
-<style>
-	.service-image {
-		height: 300px;
-		width: 100%;
-		object-fit: cover;
-	}
-</style>
 
 <!-- Services -->
 <section class="services py-5">
@@ -44,8 +36,8 @@
 					alt="{{ service.title }}">
 			</div>
 			<div class="col-md-6 order-md-1">
-				<h2>{{ service.title }}</h2>
-				<p>{{ service.description }}</p>
+				<h2 class="display-5 fw-bold mb-4">{{ service.title }}</h2>
+				<p class="fs-5 text-white-75 mb-3">{{ service.description }}</p>
 			</div>
 			{% else %}
 			<!-- Image on left -->
@@ -54,8 +46,8 @@
 					alt="{{ service.title }}">
 			</div>
 			<div class="col-md-6">
-				<h2>{{ service.title }}</h2>
-				<p>{{ service.description }}</p>
+				<h2 class="display-5 fw-bold mb-4">{{ service.title }}</h2>
+				<p class="fs-5 text-white-75 mb-3">{{ service.description }}</p>
 			</div>
 			{% endif %}
 		</div>
@@ -75,6 +67,7 @@
 					<p class="mb-0">Phone: (248) 392-1987</p>
 				</div>
 
+
 				<form method="post" action="">
 					{% csrf_token %}
 					<div class="row g-3">
@@ -84,11 +77,11 @@
 						</div>
 						<div class="col-md-6">
 							<label for="lastName" class="form-label">Last Name</label>
-							<input type="text" class="form-control" id="lastName" name="lastName" required>
+							<input type="text" class="form-control" id="lastName" name="lastName">
 						</div>
 						<div class="col-md-6">
 							<label for="email" class="form-label">Email</label>
-							<input type="email" class="form-control" id="email" name="email" required>
+							<input type="email" class="form-control" id="email" name="email">
 						</div>
 						<div class="col-md-6">
 							<label for="phone" class="form-label">Phone Number</label>
@@ -98,16 +91,27 @@
 							<label for="zipcode" class="form-label">Zip Code</label>
 							<input type="text" class="form-control" id="zipcode" name="zipcode" required>
 						</div>
+						<div class="col-md-6">
+							<label for="serviceType" class="form-label">Type of Service</label>
+							<select class="form-select" id="serviceType" name="serviceType" required>
+								<option value="">Select a service</option>
+								<option value="lawn">Lawn Services</option>
+								<option value="cleaning">Exterior Cleaning</option>
+								<option value="dock-install">Dock Installation</option>
+								<option value="dock-fabrication">Dock Fabrication</option>
+								<option value="tree-care">Tree Care</option>
+								<option value="maintenance">Home Maintenance</option>
+							</select>
+						</div>
 						<div class="col-12">
-							<label for="notes" class="form-label">What services are you interested in?</label>
-							<textarea class="form-control" id="notes" name="notes" rows="5" placeholder="Tell us about your needs..." required></textarea>
+							<label for="notes" class="form-label">Additional Notes</label>
+							<textarea class="form-control" id="notes" name="notes" rows="5"></textarea>
 						</div>
 					</div>
 					<div class="text-center">
 						<button type="submit" class="btn btn-dark-green mt-4">Submit Request</button>
 					</div>
 				</form>
-			</div>
 		</div>
 	</div>
 </section>
@@ -123,6 +127,42 @@
 	}
 	.btn-dark-green:hover {
 		background-color: #145218;
+	}
+	.intro {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;  /* vertical centering */
+		align-items: center;      /* horizontal centering */
+		min-height: 30vh;         /* adjust to taste */
+		margin-top: 3rem;
+	}
+	.service-image {
+		height: 300px;
+		width: 100%;
+		object-fit: cover;
+	}
+	.service-image {
+	  height: 300px;
+	  width: 100%;
+	  object-fit: cover;
+	}
+
+	@media (max-width: 767.98px) {
+	  /* space below the image */
+	  .service-image {
+	    margin-bottom: 1.5rem;
+	  }
+
+	  /* extra top spacing for headings */
+	  .services h2 {
+	    margin-top: 1rem;
+	    margin-bottom: 1rem;
+	  }
+
+	  /* extra bottom spacing for paragraphs */
+	  .services p {
+	    margin-bottom: 1rem;
+	  }
 	}
 </style>
 

@@ -23,6 +23,7 @@ def home(request):
         email = request.POST.get("email")
         phone = request.POST.get("phone")
         zip_code = request.POST.get("zipcode")
+        service_type = request.POST.get("serviceType")
         notes = request.POST.get("notes")
 
         message = f"""
@@ -32,6 +33,7 @@ def home(request):
         Email: {email}
         Phone: {phone}
         Zip Code: {zip_code}
+        Service Type: {service_type}
         Notes: {notes}
         """
 
@@ -52,6 +54,34 @@ def home(request):
 
 
 def contact_us(request):
+    if request.method == "POST":
+        first = request.POST.get("firstName")
+        last = request.POST.get("lastName")
+        email = request.POST.get("email")
+        phone = request.POST.get("phone")
+        zip_code = request.POST.get("zipcode")
+        service_type = request.POST.get("serviceType")
+        notes = request.POST.get("notes")
+
+        message = f"""
+        New Contact Form Submission:
+
+        Name: {first} {last}
+        Email: {email}
+        Phone: {phone}
+        Zip Code: {zip_code}
+        Service Type: {service_type}
+        Notes: {notes}
+        """
+
+        send_mail(
+            subject="New Contact Form Submission",
+            message=message,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=["jack@crescentservices.co", "siddharth.vyas619@gmail.com"],
+        )
+
+        return render(request, 'core/success.html')
     return render(request, 'core/contact_us.html')
 
 
@@ -235,6 +265,7 @@ def services_view(request, service_type):
         email = request.POST.get("email")
         phone = request.POST.get("phone")
         zip_code = request.POST.get("zipcode")
+        service_type = request.POST.get("serviceType")
         notes = request.POST.get("notes")
 
         message = f"""
@@ -244,6 +275,7 @@ def services_view(request, service_type):
         Email: {email}
         Phone: {phone}
         Zip Code: {zip_code}
+        Service Type: {service_type}
         Notes: {notes}
         """
 

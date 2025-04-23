@@ -1,4 +1,4 @@
 todo.md
 .env
+*.pyc
 staticfiles/
-__pycache__/

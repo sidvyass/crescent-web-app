@@ -14,8 +14,8 @@
 	style="position: relative; z-index: 1; background: transparent; padding: 2rem; width: 555px; display: flex; flex-direction: column; gap: 1.5rem; margin-left: 20%;"
 	>
 
-		<h1 class="display-5 fw-bold mb-3" style="text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);">
-			Redefine Outdoor Luxury with <strong style="color: #1b5e20;">Crescent Services</strong>
+		<h1 class="display-5 fw-bold mb-1" style="text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);">
+			Redefine Outdoor Luxury with <br><strong style="color: #1b5e20;">Crescent Services</strong>
 		</h1>
 
 		<p class="fs-5 text-white-75 mb-3" style="text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);">
@@ -31,55 +31,45 @@
 	</div>
 </div>
 
-<style>
-@media (max-width: 768px) {
-	.responsive-hero-card {
-		margin-left: auto !important;
-		margin-right: auto !important;
-	}
-}
-</style>
-
-<!-- SERVICES LIST SECTION (Condensed Height, Larger Font) -->
 <section class="bg-dark-green py-2">
   <div class="container">
-    <div class="row align-items-center" style="min-height: 50px;">
+    <div class="row align-content-center" style="min-height: 50px;">
       
       <!-- Item 1 -->
-      <div class="col-md-4 mb-0">
-        <div class="d-flex align-items-center">
+      <div class="col-md-4">
+        <div class="service-item d-flex align-items-center">
           <span class="me-2">
             <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M14 0C6.268 0 0 6.268 0 14s6.268 14 14 14 14-6.268 14-14S21.732 0 14 0z" fill="#1b5e20"/>
               <path d="M20 9L12 17L8 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-          </span>
+	</span>
           <p class="mb-0 text-white fs-5">Create a new space to relax</p>
         </div>
       </div>
 
       <!-- Item 2 -->
-      <div class="col-md-4 mb-0">
-        <div class="d-flex align-items-center">
+      <div class="col-md-4">
+        <div class="service-item d-flex align-items-center">
           <span class="me-2">
             <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M14 0C6.268 0 0 6.268 0 14s6.268 14 14 14 14-6.268 14-14S21.732 0 14 0z" fill="#1b5e20"/>
               <path d="M20 9L12 17L8 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-          </span>
+	</span>
           <p class="mb-0 text-white fs-5">Fix a problem on your property</p>
         </div>
       </div>
 
       <!-- Item 3 -->
-      <div class="col-md-4 mb-0">
-        <div class="d-flex align-items-center">
+      <div class="col-md-4">
+        <div class="service-item d-flex align-items-center">
           <span class="me-2">
             <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M14 0C6.268 0 0 6.268 0 14s6.268 14 14 14 14-6.268 14-14S21.732 0 14 0z" fill="#1b5e20"/>
               <path d="M20 9L12 17L8 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-          </span>
+	</span>
           <p class="mb-0 text-white fs-5">Make your yard feel like home</p>
         </div>
       </div>
@@ -123,20 +113,25 @@
 				</div>
 			{% endfor %}
 		</div>
+		  <!-- carousel-inner … </div> -->
+		  <button class="carousel-control-prev" 
+			  type="button" 
+			  data-bs-target="#servicesCarousel" 
+			  data-bs-slide="prev">
+		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Previous</span>
+		  </button>
+		  <button class="carousel-control-next" 
+			  type="button" 
+			  data-bs-target="#servicesCarousel" 
+			  data-bs-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Next</span>
+		  </button>
 	</div>
 </div>
 
-<style>
-	.service-img {
-		transition: transform 0.3s ease;
-	}
-
-	.service-img:hover {
-		transform: scale(1.05);
-	}
-</style>
-
-<!-- DARK GREEN SECTION -->
+<!-- DARK SECTION -->
 <section class="text-light py-5" style="position: relative; background-image: url('{% static 'core/images/bg_section_3.jpeg' %}'); background-size: cover; background-position: center;">
 	
 	<!-- Tint Overlay -->
@@ -144,7 +139,7 @@
 
 	<div class="container" style="position: relative; z-index: 1;">
 		<div class="row align-items-center justify-content-between">
-			<div class="col-md-6 p-md-5 p-3">
+			<div class="col-md-6 p-md-5 p-3 order-2 order-md-1">
 				<h1 class="display-5 fw-bold mb-4">
 					Why Crescent?
 				</h1>
@@ -159,7 +154,8 @@
 				</p>
 				<a href="{% url 'contact_us' %}" class="btn btn-light mt-3">Schedule a Free Consultation</a>
 			</div>
-			<div class="col-md-6 p-md-5 p-3 d-flex align-items-center" style="height: 500px;">
+			<div class="col-md-6 p-md-5 p-3 d-flex align-items-center
+				order-1 order-md-2 fixed-height">
 				<img src="{% static 'core/images/why_crescent.jpg' %}" class="img-fluid rounded rounded-bottom-end w-100 h-100 object-fit-cover" alt="Mission Image" loading="lazy">
 			</div>
 		</div>
@@ -171,22 +167,22 @@
 	<div class="container">
 		<div class="row align-items-center">
 			<!-- Left Image -->
-			<div class="col-md-6 mb-4 mb-md-0">
-				<img src="{% static 'core/images/our_mission.jpg' %}" class="img-fluid rounded rounded-bottom-end" alt="Mission Image" loading="lazy">
+			<div class="col-md-6 mb-4 mb-md-0 fixed-height">
+				<img src="{% static 'core/images/our_mission.jpg' %}" class="img-fluid rounded rounded-bottom-end w-100 h-100 object-fit-cover" alt="Mission Image" loading="lazy">
 			</div>
 
 			<!-- Right Text -->
 			<div class="col-md-6 px-md-5">
-				<h1 class="display-5 fw-bold">
+				<h1 class="display-5 fw-bold mb-4">
 					Our Mission
 				</h1>
-				<p class="mt-3">
+				<p class="fs-5 text-white-75 mb-3">
 					Our mission is to enhance and preserve the beauty, safety, and value of our clients’ outdoor spaces through reliable, high-quality services. We are committed to delivering exceptional lawn care, dock installation, painting, power washing, and tree care with integrity, professionalism, and attention to detail. 
 				</p>
 				<blockquote class="blockquote text-muted ps-3 border-start border-3 border-success">
 					<p class="mb-0">Year-round care. Lasting impressions.</p>
 				</blockquote>
-				<p class="mt-3">
+				<p class="fs-5 text-white-75 mb-3">
 					 Our four-step process – consult, design, build, maintain – is meticulously crafted to embody our core values. Our goal is to build lasting relationships with homeowners by exceeding expectations and treating every property as if it were our own.
 				</p>
 				<a href="{% url 'contact_us' %}" class="btn btn-dark-green d-inline-flex align-items-center mt-3">
@@ -196,21 +192,6 @@
 		</div>
 	</div>
 </section>
-
-<!-- STYLES -->
-<style>
-	.bg-dark-green {
-		background-color: #1b5e20;
-	}
-	.btn-dark-green {
-		background-color: #1b5e20;
-		color: #fff;
-		border: none;
-	}
-	.btn-dark-green:hover {
-		background-color: #145218;
-	}
-</style>
 
 <section class="bg-light py-5">
 	<div class="container px-4">
@@ -232,11 +213,11 @@
 						</div>
 						<div class="col-md-6">
 							<label for="lastName" class="form-label">Last Name</label>
-							<input type="text" class="form-control" id="lastName" name="lastName" required>
+							<input type="text" class="form-control" id="lastName" name="lastName">
 						</div>
 						<div class="col-md-6">
 							<label for="email" class="form-label">Email</label>
-							<input type="email" class="form-control" id="email" name="email" required>
+							<input type="email" class="form-control" id="email" name="email">
 						</div>
 						<div class="col-md-6">
 							<label for="phone" class="form-label">Phone Number</label>
@@ -246,9 +227,21 @@
 							<label for="zipcode" class="form-label">Zip Code</label>
 							<input type="text" class="form-control" id="zipcode" name="zipcode" required>
 						</div>
+						<div class="col-md-6">
+							<label for="serviceType" class="form-label">Type of Service</label>
+							<select class="form-select" id="serviceType" name="serviceType" required>
+								<option value="">Select a service</option>
+								<option value="lawn">Lawn Services</option>
+								<option value="cleaning">Exterior Cleaning</option>
+								<option value="dock-install">Dock Installation</option>
+								<option value="dock-fabrication">Dock Fabrication</option>
+								<option value="tree-care">Tree Care</option>
+								<option value="maintenance">Home Maintenance</option>
+							</select>
+						</div>
 						<div class="col-12">
-							<label for="notes" class="form-label">What services are you interested in?</label>
-							<textarea class="form-control" id="notes" name="notes" rows="5" placeholder="Tell us about your needs..." required></textarea>
+							<label for="notes" class="form-label">Additional Notes</label>
+							<textarea class="form-control" id="notes" name="notes" rows="5"></textarea>
 						</div>
 					</div>
 					<div class="text-center">
@@ -259,5 +252,93 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.bg-dark-green {
+		background-color: #1b5e20;
+	}
+	.btn-dark-green {
+		background-color: #1b5e20;
+		color: #fff;
+		border: none;
+	}
+	.btn-dark-green:hover {
+		background-color: #145218;
+	}
+	@media (max-width: 768px) {
+		.responsive-hero-card {
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+	}
+	@media (max-width: 768px) {
+		.hero {
+		justify-content: center !important; 
+		align-items:    center !important; 
+		padding: 1.5rem !important;
+		height: 80vh !important;
+		}
+
+		.hero-card {
+		margin: 0 auto !important;
+		width: auto !important;
+		max-width: 90% !important;
+		}
+		@media (max-width: 768px) {
+		.hero-card {
+		    padding-top: 6rem !important;
+		  }
+	}
+	}
+	@media (max-width: 768px) {
+	  .service-item {
+	    max-width: 300px; 
+	    margin: 0.75rem auto;
+	  }
+	@media (min-width: 768px) {
+	  .fixed-height {
+	    height: 500px;
+	    display: flex;            /* so align-items works */
+	    align-items: center;      /* vertically center contents */
+	  }
+	  .fixed-height img {
+	    width: 100%;
+	    height: 100%;
+	    object-fit: cover;
+	  }
+	}
+	.service-img {
+		transition: transform 0.3s ease;
+	}
+
+	.service-img:hover {
+		transform: scale(1.05);
+	}
+	@media (max-width: 768px) {
+	  #servicesCarousel .carousel-item .row {
+	    justify-content: center;
+	  }
+	  #servicesCarousel .carousel-item .row > div:not(:first-child) {
+	    display: none;
+	  }
+	}
+	#servicesCarousel .carousel-control-prev,
+	#servicesCarousel .carousel-control-next {
+	  width: 2.5rem;
+	  height: 2.5rem;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  background-color: rgba(0,0,0,0.3);
+	  border-radius: 50%;
+	}
+
+	#servicesCarousel .carousel-control-prev-icon,
+	#servicesCarousel .carousel-control-next-icon {
+	  filter: invert(1);
+	  width: 1.5rem;
+	  height: 1.5rem;
+	  background-size: 100%, 100%;
+	}
+</style>
 
 {% endblock %}

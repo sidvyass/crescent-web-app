@@ -173,46 +173,74 @@
 		.dark-custom {
 			background-color: #1b5e20;
 		}
-	</style>
+	  /* mobile only: remove side-padding and pull Contact out of the collapse */
+	  @media (max-width: 991.98px) {
+	    .navbar-custom {
+	      padding-left: 1rem !important;
+	      padding-right: 1rem !important;
+	    }
+	    /* show this extra Contact button on mobile */
+	    .contact-button-mobile {
+	      display: inline-block !important;
+	      margin-left: auto;
+	      margin-right: 1rem;
+	    }
+	    /* hide the original Contact nav-item inside the menu */
+	    .contact-mobile-hidden {
+	      display: none !important;
+	    }
+	  }
+	  /* desktop: hide the extra mobile-only Contact */
+	  @media (min-width: 992px) {
+	    .contact-button-mobile {
+	      display: none !important;
+	    }
+	  }
+</style>
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-custom" style="padding-left: 21%; padding-right: 15%;">
-		<a class="navbar-brand ms-3" href="{% url 'home' %}">
-			<img src="{% static 'core/images/logo.png' %}" alt="MyLogo" height="50">
-		</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-			<ul class="navbar-nav align-items-center">
-				<li class="nav-item dropdown">
-					<a class="nav-link services" href="#">Services</a>
-					<ul class="dropdown-menu-custom">
-						<li><a href="{% url 'services' service_type='dock-install-storage' %}">Dock
-								Install and Storage</a></li>
-						<li><a href="{% url 'services' service_type='landscaping' %}">Landscaping</a>
-						</li>
-						<li><a href="{% url 'services' service_type='painting' %}">Painting</a>
-						</li>
-						<li><a href="{% url 'services' service_type='powerwashing' %}">Power
-								Washing</a></li>
-						<li><a href="{% url 'services' service_type='snow-removal' %}">Snow
-								Removal</a></li>
-						<li><a href="{% url 'services' service_type='tree-removal' %}">Tree
-								Removal</a></li>
-					</ul>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{% url 'about_us' %}">About Us</a>
-				</li>
-				<li class="nav-item">
-					<a class="contact-button" href="{% url 'contact_us' %}">Contact Us!</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
+
+<!-- ↓ replace your old <nav>…</nav> with this -->
+<nav class="navbar navbar-expand-lg navbar-custom" style="padding-left: 21%; padding-right: 15%;">
+  <a class="navbar-brand ms-3" href="{% url 'home' %}">
+    <img src="{% static 'core/images/logo.png' %}" alt="MyLogo" height="50">
+  </a>
+
+  <!-- mobile-only Contact, pulled out of the collapse -->
+  <a class="contact-button contact-button-mobile" href="{% url 'contact_us' %}">
+    Contact Us!
+  </a>
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav align-items-center">
+      <li class="nav-item dropdown">
+        <a class="nav-link services" href="#">Services</a>
+        <ul class="dropdown-menu-custom">
+          <li><a href="{% url 'services' service_type='dock-install-storage' %}">Dock Install and Storage</a></li>
+          <li><a href="{% url 'services' service_type='landscaping' %}">Landscaping</a></li>
+          <li><a href="{% url 'services' service_type='painting' %}">Painting</a></li>
+          <li><a href="{% url 'services' service_type='powerwashing' %}">Power Washing</a></li>
+          <li><a href="{% url 'services' service_type='snow-removal' %}">Snow Removal</a></li>
+          <li><a href="{% url 'services' service_type='tree-removal' %}">Tree Removal</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'about_us' %}">About Us</a>
+      </li>
+      <!-- original Contact, hidden on mobile -->
+      <li class="nav-item contact-mobile-hidden">
+        <a class="contact-button" href="{% url 'contact_us' %}">Contact Us!</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 	<script>
 		let lastScrollTop = 0;
 		const navbar = document.querySelector('.navbar');
