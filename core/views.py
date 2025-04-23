@@ -41,7 +41,7 @@ def home(request):
             subject="New Contact Form Submission",
             message=message,
             from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=["jack@crescentservices.co"],
+            recipient_list=["jack@crescentservices.co", "dev@crescentservices.co"],
         )
 
         return render(request, 'core/success.html')
