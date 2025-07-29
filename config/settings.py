@@ -36,7 +36,7 @@ SECRET_KEY = os.environ.get("D_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["crescent-web-app-d424a65374f9.herokuapp.com", "crescent.herokuapp.com", "www.crescentservices.co", "127.0.0.1"]
+ALLOWED_HOSTS = ["crescent-web-app-d424a65374f9.herokuapp.com", "crescent.herokuapp.com", "www.crescentservices.co", "127.0.0.1", "www.crescenthw.com"]
 
 
 # Application definition
